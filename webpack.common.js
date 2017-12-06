@@ -113,14 +113,24 @@
           //   test: /\.js$/,
           //   use: 'babel-loader?presets=es2015'// 'jsx-loader',
           // },
-          {//使用这个方式替换上面分开的两种写法 推荐
+          {
             test:/\.jsx?$/,
             include:/src/,
             loader:'babel-loader',
             options:{
-              presets:['es2015','stage-0','react']
+              presets:['env','react']
             }
-          },
+          }
+          // {//使用这个方式替换上面分开的两种写法 推荐
+          //   test:/\.js$/,
+          //   include:/src/,
+          //   use: {
+          //     loader: 'babel-loader',
+          //     options: {
+          //       presets: ['env']
+          //     }
+          //   }
+          // },
           // {
           //   test: require.resolve('./src/index.js'),
           //   use: 'imports-loader?this=>window'

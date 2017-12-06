@@ -3,14 +3,12 @@
 //     "react"
 //   ]
 // }
-
-
 {
   "presets": [
     ["env", {
       "targets": {
         "browsers": ["last 2 versions", "safari >= 7"],
-         "node": "6.10",// "node": "current"
+         "node": "current",// "node": "current"
          "uglify":true,
          "debug":true
       }
