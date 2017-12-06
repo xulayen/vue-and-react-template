@@ -1,7 +1,7 @@
 {
   "name": "webpack-for-react-template",
   "version": "1.0.0",
-  "description": "",
+  "description": "is a webpack for react template",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.dev.js",
