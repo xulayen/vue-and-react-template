@@ -5,7 +5,7 @@
  module.exports = {
    entry: {
     app: './src/index.js',
-    vendor:['jquery','jquery_wechat_sdk']
+    vendor:['jquery_wechat_sdk','react','react-dom','react-router-dom']
    },
    plugins: [
       /**
@@ -25,7 +25,7 @@
         minChunks: function(module, count) {
           return (module.resource && 
             /\.js$/.test(module.resource) && 
-            module.resource.indexOf(path.join(__dirname, './node_modules')) === 0)
+            module.resource.indexOf(path.join(__dirname, './node_modules')) !== 0)
         }
       }),
       /**
@@ -55,16 +55,12 @@
    ],
     module: {
         rules: [
-          // {            
-          //     test: /\.css$/,                                              //生成＝内连样式
+          // {    //生成＝内连样式          
+          //     test: /\.css$/,                                             
           //     use: ['style-loader', 'css-loader']
           // },
-          {
-            test: /\.js$/,
-            use: 'babel-loader?presets=es2015'// 'jsx-loader',
-          },
-          {
-            test: /\.css$/,                                                     //生成外链样式
+          {//生成外链样式 推荐
+            test: /\.css$/,                                                     
             use: ExtractTextPlugin.extract({
               fallback: "style-loader",
               use: ["css-loader"],
@@ -105,13 +101,25 @@
               }
             ]
           },
-          {
-               test: /\.jsx$/,
-               use:[
-                 {
-                   loader:'jsx-loader'
-                 }
-               ]
+          // {
+          //      test: /\.jsx$/,
+          //      use:[
+          //        {
+          //          loader:'jsx-loader'
+          //        }
+          //      ]
+          // },
+          // {
+          //   test: /\.js$/,
+          //   use: 'babel-loader?presets=es2015'// 'jsx-loader',
+          // },
+          {//使用这个方式替换上面分开的两种写法 推荐
+            test:/\.jsx?$/,
+            include:/src/,
+            loader:'babel-loader',
+            options:{
+              presets:['es2015','stage-0','react']
+            }
           }
           // {
           //   test: require.resolve('./src/index.js'),
