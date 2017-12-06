@@ -120,7 +120,7 @@
             options:{
               presets:['es2015','stage-0','react']
             }
-          }
+          },
           // {
           //   test: require.resolve('./src/index.js'),
           //   use: 'imports-loader?this=>window'
