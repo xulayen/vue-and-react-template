@@ -12,7 +12,7 @@
        * 生成html的插件,引入css文件和js文件
        */
       new HtmlWebpackPlugin({
-        title: '中商',
+        title: '模版',
         viewport:'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no',
         template:'./src/template/index.html'
       }),

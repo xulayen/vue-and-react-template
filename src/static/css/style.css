@@ -1,1 +1,15 @@
-﻿
+﻿/* Icons */
+@font-face { 
+	font-family: 'iconfont';
+    src: url('../font/iconfont.eot');
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/iconfont.woff') format('woff'),
+    url('../font/iconfont.ttf') format('truetype'),
+    url('../font/iconfont.svg#iconfont') format('svg');
+}
+body{
+    background: url(../images/221950.jpg);
+    background-repeat: no-repeat;
+    font-family:"iconfont" !important;
+    color: #f00;
+}
