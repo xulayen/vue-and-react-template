@@ -2,7 +2,7 @@
 
 ## 模版下载
 ``` bash
-$ git clone https://github.com/xulayen/webpack-for-react-template.git
+$ git clone https://github.com/xulayen/webpack-for-react-template.git && cd webpack-for-react-template
 ```
 
 ## 模版安装
