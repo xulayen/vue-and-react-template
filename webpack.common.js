@@ -40,7 +40,8 @@
        */
       new webpack.ProvidePlugin({
         join: ['lodash', 'join'],
-        $:['jquery']
+        $:['jquery'],
+        trim:['jquery','trim']
       }),
       /**
        * ExtractTextPlugin分离js中引入的css文件
