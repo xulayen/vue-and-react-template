@@ -36,7 +36,8 @@ const merge = require('webpack-merge');
             test: /\.css|\.js|\.html|\.jpg|\.png|\.gif|\.html/,//满足正则表达式的文件会被压缩
             threshold: 1024, //资源文件大于10240B=10kB时会被压缩
             minRatio: 0.8 //最小压缩比达到0.8时才会被压缩
-        })
+        }),
+        new webpack.BannerPlugin("作者：xulayen 模版地址：https://github.com/xulayen/webpack-for-react-template")
     ],
     output: {
       filename: 'static/js/[name].[chunkhash].js',
