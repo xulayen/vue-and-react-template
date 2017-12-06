@@ -121,16 +121,6 @@
               presets:['env','react']
             }
           }
-          // {//使用这个方式替换上面分开的两种写法 推荐
-          //   test:/\.js$/,
-          //   include:/src/,
-          //   use: {
-          //     loader: 'babel-loader',
-          //     options: {
-          //       presets: ['env']
-          //     }
-          //   }
-          // },
           // {
           //   test: require.resolve('./src/index.js'),
           //   use: 'imports-loader?this=>window'
