@@ -13,6 +13,7 @@ class MyButtonController extends React.Component{
     }
 
     componentDidMount() {
+        console.log($.trim('   7788            '));
         ListStore.addChangeListener(this._onChange.bind(this));
     };
 

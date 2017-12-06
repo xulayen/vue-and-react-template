@@ -39,7 +39,8 @@
        * 颗粒化
        */
       new webpack.ProvidePlugin({
-        join: ['lodash', 'join']
+        join: ['lodash', 'join'],
+        $:['jquery']
       }),
       /**
        * ExtractTextPlugin分离js中引入的css文件
