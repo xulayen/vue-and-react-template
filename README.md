@@ -34,7 +34,7 @@ $ npm run server
 http://127.0.0.1:8011/
 
 ## 文件结构
-
+``` bash
 node_modules
 server
     config
@@ -76,3 +76,4 @@ webpack.dev.js
     > dev modules config
 webpack.prod.js
     > prod modules config
+```
