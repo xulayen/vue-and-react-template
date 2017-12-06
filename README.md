@@ -39,41 +39,41 @@ node_modules
 server
     config
         config.js
-        > config file
+        # config file
     router
         router.js
-        > router file
+        # router file
     static
-        > All the resource files that are generated after the site is released
+        # All the resource files that are generated after the site is released
     Util
         until.js
-        > until file
+        # until file
     index.html
-        > script build the file
+        # script build the file
     server.js
-        > start a nodejs server 
+        # start a nodejs server 
 src
     components
-        > Store the directory of the project components
+        # Store the directory of the project components
     data
-        > website resource files eg. mp3 file or and so on
+        # website resource files eg. mp3 file or and so on
     flux
-        > use flux to get or set data flow
+        # use flux to get or set data flow
     page
-        > website page components
+        # website page components
     static
-        > src resource files
+        # src resource files
     template
-        > html template
+        # html template
     index.js
-        > app entryn file
+        # app entryn file
 .babelrc
-    > .babelrc file
+    # .babelrc file
 package.json
 webpack.common.js
-    > common modules config
+    # common modules config
 webpack.dev.js
-    > dev modules config
+    # dev modules config
 webpack.prod.js
-    > prod modules config
+    # prod modules config
 ```
