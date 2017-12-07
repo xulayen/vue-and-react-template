@@ -2,6 +2,7 @@
   const webpack = require('webpack'); 
   const HtmlWebpackPlugin = require('html-webpack-plugin');
   const ExtractTextPlugin = require("extract-text-webpack-plugin");
+  const NyanProgressPlugin = require('nyan-progress-webpack-plugin');
  module.exports = {
    entry: {
     app: './src/index.js',
@@ -26,7 +27,7 @@
         minChunks: function(module, count) {
           return (module.resource && 
             /\.js$/.test(module.resource) && 
-            module.resource.indexOf(path.join(__dirname, './node_modules')) !== 0)
+            module.resource.indexOf(path.join(__dirname, './node_modules')) !== -1)
         }
       }),
       /**
@@ -42,7 +43,8 @@
       new webpack.ProvidePlugin({
         join: ['lodash', 'join'],
         $:['jquery'],
-        trim:['jquery','trim']
+        trim:['jquery','trim'],
+        jQuery:['jquery']
       }),
       /**
        * ExtractTextPlugin分离js中引入的css文件
@@ -51,8 +53,9 @@
         filename:  (getPath) => {
             return getPath('static/css/[name].[chunkhash].css'); //设置样式路劲
         },
-        allChunks: true
-      })
+        allChunks: true  // 若要按需加载 CSS 则请注释掉该行
+      }),
+      new NyanProgressPlugin(), // 进度条
    ],
     module: {
         rules: [
@@ -128,8 +131,9 @@
             test:/\.jsx?$/,
             include:/src/,
             loader:'babel-loader',
-            options:{
-              presets:['env','react']
+            options: {
+              presets: ['react'],
+              plugins: ['transform-runtime']
             }
           },
 

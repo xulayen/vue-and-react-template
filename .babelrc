@@ -10,10 +10,10 @@
   "presets": [
     ["env", {
       "targets": {
-        "browsers": ["last 2 versions", "safari >= 7" ,"chrome >=62"],
-         "node": "current",// "node": "current"
+        "browsers": ["last 2 versions", "safari >= 7" ,"chrome >=60"],
+         "node": "current",
          "uglify":true,
-         "debug":false
+         "debug":true
       }
     }]
   ]

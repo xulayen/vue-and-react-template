@@ -10,6 +10,7 @@
 body{
     background: url(../images/221950.jpg);
     background-repeat: no-repeat;
+    overflow:hidden;
     font-family:"iconfont" !important;
     color: #f00;
 }
