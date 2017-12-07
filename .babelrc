@@ -3,14 +3,17 @@
 //     "react"
 //   ]
 // }
+
+
+
 {
   "presets": [
     ["env", {
       "targets": {
-        "browsers": ["last 2 versions", "safari >= 7"],
+        "browsers": ["last 2 versions", "safari >= 7" ,"chrome >=62"],
          "node": "current",// "node": "current"
          "uglify":true,
-         "debug":true
+         "debug":false
       }
     }]
   ]

@@ -14,7 +14,8 @@
       new HtmlWebpackPlugin({
         title: '模版',
         viewport:'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no',
-        template:'./src/template/index.html'
+        template:'./src/template/index.html',
+        chunks: ['runtime','vendor', 'app']
       }),
       new webpack.HashedModuleIdsPlugin(),
       /**
@@ -113,6 +114,16 @@
           //   test: /\.js$/,
           //   use: 'babel-loader?presets=es2015'// 'jsx-loader',
           // },
+
+          // {//npm install babel-preset-es2015 babel-preset-stage-0 --save-dev
+          //   test:/\.jsx?$/,
+          //   include:/src/,
+          //   loader:'babel-loader',
+          //   options:{
+          //     presets:['es2015','stage-0','react']
+          //   }
+          // },
+          
           {
             test:/\.jsx?$/,
             include:/src/,
@@ -120,7 +131,8 @@
             options:{
               presets:['env','react']
             }
-          }
+          },
+
           // {
           //   test: require.resolve('./src/index.js'),
           //   use: 'imports-loader?this=>window'
