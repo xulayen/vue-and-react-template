@@ -1,13 +1,14 @@
 const webpack = require('webpack');
 const path=require('path');
 
+
+
 const vendors = [
   'jquery_wechat_sdk',
   'react',
   'react-dom',
   'react-router',
 ];
-
 module.exports = {
   output: {
     path: path.resolve(__dirname, 'server'),
