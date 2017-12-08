@@ -106,6 +106,28 @@ const NyanProgressPlugin = require('nyan-progress-webpack-plugin');
               }
             ]
           },
+          {
+            test: /\.(mp4|webm|3gp)$/,
+            use: [
+              {
+                loader: 'file-loader',
+                options: {
+                  name:'static/data/video/[name].[hash].[ext]'
+                }
+              }
+            ]
+          },
+          {
+            test: /\.(mp3|ogg)$/,
+            use: [
+              {
+                loader: 'file-loader',
+                options: {
+                  name:'static/data/music/[name].[hash].[ext]'
+                }
+              }
+            ]
+          },
           // {
           //      test: /\.jsx$/,
           //      use:[

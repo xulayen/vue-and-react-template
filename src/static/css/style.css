@@ -14,3 +14,42 @@ body{
     font-family:"iconfont" !important;
     color: #f00;
 }
+
+.videobg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: #eee;
+    z-index: 1;
+}
+
+.video{
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; vertical-align: baseline; object-fit: fill;
+}
+
+.videobg .gridbg{
+    position: absolute;
+    background: url(../images/grid.png);
+    top: 0px;
+    left: 0px;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    vertical-align: baseline;
+}
+
+.btnlogin{
+    width: 341px;
+    padding: 40px;
+    background: #fff;
+    box-shadow: 0 0 3px rgba(0,0,0,.1);
+    position: absolute;
+    top: 50%;
+    margin-top: -150px;
+    left: 50%;
+    margin-left: -210px;
+    z-index: 999;
+}
