@@ -46,7 +46,7 @@ const merge = require('webpack-merge');
             minRatio: 0.8 //最小压缩比达到0.8时才会被压缩
         }),
         new webpack.BannerPlugin("作者：xulayen 模版地址：https://github.com/xulayen/webpack-for-react-template"),
-        new webpack.NoEmitOnErrorsPlugin()
+        new webpack.NoEmitOnErrorsPlugin(),
     ],
     output: {
       filename: 'static/js/[name].[chunkhash].js',

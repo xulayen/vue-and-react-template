@@ -3,10 +3,11 @@
   const HtmlWebpackPlugin = require('html-webpack-plugin');
   const ExtractTextPlugin = require("extract-text-webpack-plugin");
   const NyanProgressPlugin = require('nyan-progress-webpack-plugin');
+  const ImageminPlugin = require('imagemin-webpack-plugin').default
  module.exports = {
    entry: {
     app: './src/index.js',
-    vendor:['jquery_wechat_sdk','react','react-dom','react-router-dom']
+    vendor:['jquery_wechat_sdk']
    },
    plugins: [
       /**
@@ -16,7 +17,7 @@
         title: '模版',
         viewport:'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no',
         template:'./src/template/index.html',
-        chunks: ['runtime','vendor', 'app']
+        chunks: ['runtime','vendor', 'app'],
       }),
       new webpack.HashedModuleIdsPlugin(),
       /**
@@ -56,6 +57,16 @@
         allChunks: true  // 若要按需加载 CSS 则请注释掉该行
       }),
       new NyanProgressPlugin(), // 进度条
+      new ImageminPlugin({
+            test: /\.(jpe?g|png|gif|svg)$/i,
+            pngquant: {
+              quality: '70'
+            },
+            jpegtran: {  
+              quality: '70',
+              progressive: true 
+            }
+      })
    ],
     module: {
         rules: [
