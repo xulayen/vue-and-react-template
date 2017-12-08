@@ -1,9 +1,9 @@
-  const path = require('path');
-  const webpack = require('webpack'); 
-  const HtmlWebpackPlugin = require('html-webpack-plugin');
-  const ExtractTextPlugin = require("extract-text-webpack-plugin");
-  const NyanProgressPlugin = require('nyan-progress-webpack-plugin');
-  const ImageminPlugin = require('imagemin-webpack-plugin').default
+const path = require('path');
+const webpack = require('webpack'); 
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const NyanProgressPlugin = require('nyan-progress-webpack-plugin');
+
  module.exports = {
    entry: {
     app: './src/index.js',
@@ -57,16 +57,6 @@
         allChunks: true  // 若要按需加载 CSS 则请注释掉该行
       }),
       new NyanProgressPlugin(), // 进度条
-      new ImageminPlugin({
-            test: /\.(jpe?g|png|gif|svg)$/i,
-            pngquant: {
-              quality: '70'
-            },
-            jpegtran: {  
-              quality: '70',
-              progressive: true 
-            }
-      })
    ],
     module: {
         rules: [

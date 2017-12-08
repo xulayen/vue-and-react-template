@@ -1,12 +1,13 @@
 const webpack = require('webpack'); 
 const merge = require('webpack-merge');
- const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
- var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
- const common = require('./webpack.common.js');
- var CompressionWebpackPlugin = require('compression-webpack-plugin');
- const CleanWebpackPlugin = require('clean-webpack-plugin');
- const path = require('path');
- const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
+const common = require('./webpack.common.js');
+var CompressionWebpackPlugin = require('compression-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const path = require('path');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
  module.exports = merge(common, {
     devtool: 'source-map',
@@ -47,6 +48,16 @@ const merge = require('webpack-merge');
         }),
         new webpack.BannerPlugin("作者：xulayen 模版地址：https://github.com/xulayen/webpack-for-react-template"),
         new webpack.NoEmitOnErrorsPlugin(),
+        new ImageminPlugin({
+            test: /\.(jpe?g|png|gif|svg)$/i,
+            pngquant: {
+              quality: '70'
+            },
+            jpegtran: {  
+              quality: '70',
+              progressive: true 
+            }
+      })
     ],
     output: {
       filename: 'static/js/[name].[chunkhash].js',
