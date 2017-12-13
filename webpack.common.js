@@ -73,7 +73,7 @@ const NyanProgressPlugin = require('nyan-progress-webpack-plugin');
             })
           },
           {
-          test: /\.(png|jpg|gif)$/,
+            test: /\.(png|jpg|gif)$/,
             use: [
               {
                 loader: 'url-loader',

@@ -7,7 +7,9 @@
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "dll": "webpack --config webpack.dll.js",
     "build": "webpack --config webpack.prod.js",
-    "server": "node server/server.js"
+    "dev_server_win": "set NODE_ENV=dev && node server/server.js",
+    "server_win": "set NODE_ENV=production && set LEANCLOUD_APP_PORT=8011 && node server/server.js",
+    "server_linux": "export NODE_ENV=production && export LEANCLOUD_APP_PORT=8011 && node server/server.js"
   },
   "keywords": [],
   "author": "",
@@ -37,6 +39,7 @@
     "imports-loader": "^0.7.1",
     "jquery_wechat_sdk": "^1.5.2",
     "jsx-loader": "^0.13.2",
+    "log4js": "^2.4.1",
     "morgan": "^1.9.0",
     "nyan-progress-webpack-plugin": "^1.2.0",
     "object-assign": "^4.1.1",

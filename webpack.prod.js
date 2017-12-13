@@ -57,7 +57,7 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
               quality: '70',
               progressive: true 
             }
-      })
+        }),
     ],
     output: {
       filename: 'static/js/[name].[chunkhash].js',
