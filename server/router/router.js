@@ -22,7 +22,7 @@ module.exports = function (app) {
 
 
     app.use(function(req, res, next) {
-        
+        req.session.u="111111111111";
         //判断是主动导向404页面，还是传来的前端路由。
     　　 //如果是前端路由则如下处理'./server/index.html'
     
