@@ -7,12 +7,13 @@ import music1 from '../data/music/music.mp3';
 class IndexPage extends React.Component{
     constructor(props) {
         super(props);
-
     }
 
     render(){
         return (
             <div>
+
+
                 <audio controls="controls">
                     <source src={music1} type="audio/mp3" />
                     Your browser does not support this audio format.
@@ -24,6 +25,7 @@ class IndexPage extends React.Component{
                         <source src={mp4} type="video/mp4"/>
                     </video>
                     <MyButtonController/>
+
                 </div>
             </div>
         )

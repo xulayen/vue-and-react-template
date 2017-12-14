@@ -38,7 +38,7 @@ var routes = require('./router/router.js')(app);
 const PORT = parseInt(process.env.LEANCLOUD_APP_PORT || config.port);
 var server = http.createServer(app);
 let _s='';
-if(process.env.NODE_ENV.indexOf('production')>-1){
+if(process.env.NODE_ENV && process.env.NODE_ENV.indexOf('production')>-1){
     server.listen(PORT, function(){
         _s='App (production) is now running on port '+PORT;
         console.log(_s);
