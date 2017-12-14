@@ -51,6 +51,6 @@ module.exports.hasRole = (roleRequired) => {
 
 module.exports.signToken = (id, role) => {
     return jwt.sign({_id: id, role}, config.session.secret, {
-        expiresIn: 60 * 1 * 0.1 // 过期时间 表示5小时过期
+        expiresIn: 60 * 60 * 5 // 过期时间 表示5小时过期
     })
 }

@@ -9,6 +9,8 @@ class IndexPage extends React.Component{
         super(props);
     }
 
+
+  
     render(){
         return (
             <div>
@@ -25,6 +27,9 @@ class IndexPage extends React.Component{
                         <source src={mp4} type="video/mp4"/>
                     </video>
                     <MyButtonController/>
+
+
+
 
                 </div>
             </div>

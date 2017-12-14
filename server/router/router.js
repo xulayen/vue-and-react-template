@@ -15,6 +15,12 @@ module.exports = function (app) {
         return res.send("index api"); 
     });
 
+
+    app.post('/gettoken',function(req, res,next){
+         token = "Bearer "+auth.signToken("555555555555555555");
+         return res.send(token); 
+    })
+
     app.post('/fw',function(req, res,next) {
         log4js.info("【action: /fw 】");
         return res.send("fw api"); 

@@ -9,7 +9,8 @@
     "build": "webpack --config webpack.prod.js",
     "dev_server_win": "set NODE_ENV=dev && node server/server.js",
     "server_win": "set NODE_ENV=production && set LEANCLOUD_APP_PORT=8011 && node server/server.js",
-    "server_linux": "export NODE_ENV=production && export LEANCLOUD_APP_PORT=8011 && node server/server.js"
+    "server_linux": "export NODE_ENV=production && export LEANCLOUD_APP_PORT=8011 && node server/server.js",
+    "server_mac": "export NODE_ENV=production && export LEANCLOUD_APP_PORT=8011 && node server/server.js"
   },
   "keywords": [],
   "author": "",

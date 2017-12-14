@@ -48,16 +48,16 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
         }),
         new webpack.BannerPlugin("作者：xulayen 模版地址：https://github.com/xulayen/webpack-for-react-template"),
         new webpack.NoEmitOnErrorsPlugin(),
-        new ImageminPlugin({
-            test: /\.(jpe?g|png|gif|svg)$/i,
-            pngquant: {
-              quality: '70'
-            },
-            jpegtran: {  
-              quality: '70',
-              progressive: true 
-            }
-        }),
+        // new ImageminPlugin({
+        //     test: /\.(jpe?g|png|gif|svg)$/i,
+        //     pngquant: {
+        //       quality: '70'
+        //     },
+        //     jpegtran: {  
+        //       quality: '70',
+        //       progressive: true 
+        //     }
+        // }),
     ],
     output: {
       filename: 'static/js/[name].[chunkhash].js',
