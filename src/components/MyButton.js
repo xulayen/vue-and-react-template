@@ -13,10 +13,10 @@ class MyButton extends React.Component{
             success: function (token) {
               console.log(token)
 
-              _self.state={
-                 token:token 
-              }
-            }
+                //   _self.state={
+                //      token:token 
+                //   }
+                }
             });
 
     }
@@ -29,9 +29,9 @@ class MyButton extends React.Component{
                                     url: "/index",
                                     method: "post",
                                     type: "json",
-                                    headers: {
-                                        'Authorization': _self.state.token,
-                                    },
+                                    // headers: {
+                                    //     'Authorization': _self.state.token,
+                                    // },
                                     success: function (resp) {
                                         if (resp.code == 200) {
                                             console.log(resp)

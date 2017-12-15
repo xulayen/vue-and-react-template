@@ -12,12 +12,12 @@
      contentBase: path.join(__dirname, "dist"),
      host:'127.0.0.1',
      proxy:{
-       "/fw":{
+       "/gettoken":{
          target:'http://127.0.0.1:8011/',
          changeOrigin:true,
          secure:false
        },
-       "/SendAcVerifyInfo":{
+       "/index":{
          target:'http://127.0.0.1:8011/',
          changeOrigin:true,
          secure:false

@@ -1,7 +1,8 @@
 var Until=require('../lib/Util/until.js');
 var Config=require('../lib/config/config.js');
 var log4js=require('../lib/log4js/logger.js');
-const auth = require('../lib/auth/auth.service.js')
+const auth = require('../lib/auth/auth.service.js');
+const config = require('../lib/config/config.js')
 var sha1 = require('sha1');
 var soap = require('soap');
 var fs=require('fs');
@@ -10,16 +11,24 @@ const path=require('path');
 // routes/index.js
 module.exports = function (app) {
 
+    // app.use(function(req, res, next) {
+    //     
 
+    // });
+
+    app.post('/gettoken',function(req, res,next){
+        token = "Bearer "+auth.signToken(config.session.secret);
+        res.writeHead(200,{
+            'authorization':token
+        });
+        res.end(token);
+    });
+
+    
     app.post('/index',auth.isAuthenticated(),function(req, res,next){
         return res.send("index api"); 
     });
 
-
-    app.post('/gettoken',function(req, res,next){
-         token = "Bearer "+auth.signToken("555555555555555555");
-         return res.send(token); 
-    })
 
     app.post('/fw',function(req, res,next) {
         log4js.info("【action: /fw 】");
@@ -34,11 +43,6 @@ module.exports = function (app) {
 
 
     app.use(function(req, res, next) {
-         token = "Bearer "+auth.signToken("555555555555555555");
-         
-         console.log(token)
-         
-         log4js.info("【token】"+ token);
 
         //判断是主动导向404页面，还是传来的前端路由。
     　　 //如果是前端路由则如下处理'./server/index.html'

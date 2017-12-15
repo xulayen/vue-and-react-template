@@ -1,3 +1,17 @@
+/**
+ * Created by zhengguorong on 16/11/2.
+ * 用户权限认证方法
+ *
+ *  * Q&A
+ * 为什么要使用composable-middleware,为了解决什么问题?
+ *     他的作用是合并两个中间件,让其不需要在挂在在express实例上,例如expressJwt中间件是在执行后操作req对象,在req对象
+ *     上加入user对象,但该中间件未提供回调方法,无法在验证后执行我们的代码,因此需要使用composable插件来完成两个中间件的
+ *     合并.
+ *     当然,你也可以像官方提供示例一样,router.get('/',jwtvalidate,function(req,res,next){req.user})获取结果,但是
+ *     我的路由第三个参数主要执行数据库相关操作,不想引入验证逻辑,所以在第二个参数这里完成权限的认证.
+ *
+ */
+
 const jwt = require('jsonwebtoken');
 const expressJwt = require('express-jwt');
 const config = require('../config/config.js');
@@ -32,7 +46,8 @@ module.exports.isAuthenticated = () => {
         })
         // Attach user to request
         .use(function (req, res, next) {
-
+            //return res.status(200).end();
+            next();
         });
 }
 
