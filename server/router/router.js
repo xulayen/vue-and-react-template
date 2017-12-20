@@ -7,6 +7,7 @@ var sha1 = require('sha1');
 var soap = require('soap');
 var fs=require('fs');
 const path=require('path');
+const token = "Bearer "+auth.signToken(config.session.secret);
 
 // routes/index.js
 module.exports = function (app) {
@@ -17,7 +18,7 @@ module.exports = function (app) {
     // });
 
     app.post('/gettoken',function(req, res,next){
-        token = "Bearer "+auth.signToken(config.session.secret);
+
         res.writeHead(200,{
             'authorization':token
         });
@@ -55,8 +56,7 @@ module.exports = function (app) {
             } else {
                 res.writeHead(200,{
                     'Content-type': 'text/html',
-                    'Connection':'keep-alive',
-                    'authorization':token
+                    'Connection':'keep-alive'
                 });
                 res.end(data);
                 return next();

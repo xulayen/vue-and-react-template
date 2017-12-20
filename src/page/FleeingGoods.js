@@ -1,8 +1,8 @@
 import React from 'react';
 import {NavComponent} from '../components/nav.js';
-import {TipsComponent} from '../components/tips.js';
+import {FleeinggoodsComponent} from '../components/fleeinggoods.js';
 
-class IndexPage extends React.Component{
+class FleeingGoodsPage extends React.Component{
     constructor(props) {
         super(props);
     }
@@ -13,9 +13,9 @@ class IndexPage extends React.Component{
         return (
             <div>
                 <NavComponent/>
-                <TipsComponent/>
+                <FleeinggoodsComponent/>
             </div>
         )
     }
 }
-export {IndexPage};
+export {FleeingGoodsPage};

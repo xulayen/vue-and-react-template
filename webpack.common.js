@@ -15,7 +15,7 @@ const NyanProgressPlugin = require('nyan-progress-webpack-plugin');
        */
       new HtmlWebpackPlugin({
         title: '模版',
-        viewport:'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no',
+        viewport:'width=device-width, initial-scale=1',
         template:'./src/template/index.html',
         chunks: ['runtime','vendor', 'app'],
       }),
