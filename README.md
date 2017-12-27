@@ -52,7 +52,17 @@ build
     webpack.prod.conf.js
     # 正式环境下使用
 config
+    dev.env.js	
+    # 开发环境配置
+    index.js	
+    # 默认基础配置
+    prod.env.js	
+    # 生产环境配置
+    test.env.js
+    # 测试环境配置
 static
+    ...
+    # Static resources used by the project
 server
     config
         config.js
