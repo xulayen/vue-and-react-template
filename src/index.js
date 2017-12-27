@@ -17,7 +17,6 @@ import {IntegrationPage} from './page/Inteagration.js';
 import {FleeingGoodsPage} from './page/FleeingGoods.js';
 import {SecurityPage} from './page/Security.js';
 
-
 var div_content=document.createElement('div');
 div_content.id="content";
 document.body.appendChild(div_content);

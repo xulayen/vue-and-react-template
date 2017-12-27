@@ -8,21 +8,23 @@ var soap = require('soap');
 var fs=require('fs');
 const path=require('path');
 const token = "Bearer "+auth.signToken(config.session.secret);
-
+var edge = require('edge');
 // routes/index.js
 module.exports = function (app) {
 
-    // app.use(function(req, res, next) {
-    //     
 
-    // });
+    app.get('/c',function(){
+
+    });
 
     app.post('/gettoken',function(req, res,next){
-
         res.writeHead(200,{
             'authorization':token
         });
         res.end(token);
+
+
+        
     });
 
     
