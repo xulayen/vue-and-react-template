@@ -1,4 +1,4 @@
-# Welcome to webpack-for-react-template
+# Welcome to webpack-for-react-vue-template
 
 ## 模版下载
 ``` bash
@@ -36,6 +36,23 @@ http://127.0.0.1:8011/
 ## 文件结构
 ``` bash
 node_modules
+build
+    build.js	
+    #build config
+    check-versions.js	
+    #版本控制
+    utils.js	
+    #默认工具
+    vue-loader.conf.js	
+    #vue配置
+    webpack.base.conf.js	
+    #基础配置默认包含react配置
+    webpack.dev.conf.js	
+    #开发环境下使用
+    webpack.prod.conf.js
+    #正式环境下使用
+config
+static
 server
     config
         config.js
@@ -70,16 +87,4 @@ src
 .babelrc
     # .babelrc file
 package.json
-webpack.common.js
-    # common modules config
-webpack.dev.js
-    # dev modules config
-webpack.prod.js
-    # prod modules config
 ```
-
-
-    // "babel-core": "^6.26.0",
-    // "babel-preset-es2015": "^6.24.1",
-    // "babel-preset-react": "^6.24.1",
-    // "babel-preset-stage-0": "^6.24.1",
