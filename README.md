@@ -97,4 +97,9 @@ src
 .babelrc
     # .babelrc file
 package.json
+    # package manage
+.editorconfig
+    # 开发工具统一管理器
+.gitignore
+    # git 忽略的文件配置
 ```
