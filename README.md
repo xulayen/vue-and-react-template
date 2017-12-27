@@ -38,19 +38,19 @@ http://127.0.0.1:8011/
 node_modules
 build
     build.js	
-    #build config
+    # build config
     check-versions.js	
-    #版本控制
+    # 版本控制
     utils.js	
-    #默认工具
+    # 默认工具
     vue-loader.conf.js	
-    #vue配置
+    # vue配置
     webpack.base.conf.js	
-    #基础配置默认包含react配置
+    # 基础配置默认包含react配置
     webpack.dev.conf.js	
-    #开发环境下使用
+    # 开发环境下使用
     webpack.prod.conf.js
-    #正式环境下使用
+    # 正式环境下使用
 config
 static
 server
