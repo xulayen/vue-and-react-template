@@ -66,7 +66,7 @@ config
     # 测试环境配置
 static
     ...
-    # Static resources used by the project
+    # Static resources used by the project 
 server
     config
         config.js
@@ -93,7 +93,7 @@ src
     page
         # website page components
     static
-        # src resource files
+        # src resource files that need to package
     template
         # html template
     index.js
