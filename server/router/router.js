@@ -12,8 +12,8 @@ const token = "Bearer "+auth.signToken(config.session.secret);
 module.exports = function (app) {
 
 
-    app.get('/c',function(){
-
+    app.get('/c',function(req, res,next){
+        return res.send("index apicccc"); 
     });
 
     app.post('/gettoken',function(req, res,next){
@@ -34,14 +34,27 @@ module.exports = function (app) {
 
     app.post('/fw',function(req, res,next) {
         log4js.info("【action: /fw 】");
-        return res.send("fw api"); 
+        return res.send("fw apissssssssssssss"); 
     });
+
+    app.get('/fw',function(req, res,next) {
+        log4js.info("【action: /fw 】");
+        return res.send("fw apisssssssssssssssssssfffffffffffffffffffffff"); 
+    });
+
+    app.get('/gettoken',function(req, res,next){
+
+       return  res.end("222222222222222222323232 ");
+        
+    });
+
 
 
     app.post('/SendAcVerifyInfo',function(req, res,next){
         log4js.info("【action: /SendAcVerifyInfo 】");
         return res.send("SendAcVerifyInfo api"); 
     });
+
 
 
     app.use(function(req, res, next) {
