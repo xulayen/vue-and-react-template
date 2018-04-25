@@ -8,7 +8,6 @@ var soap = require('soap');
 var fs=require('fs');
 const path=require('path');
 const token = "Bearer "+auth.signToken(config.session.secret);
-var edge = require('edge');
 // routes/index.js
 module.exports = function (app) {
 
