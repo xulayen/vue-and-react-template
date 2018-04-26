@@ -8,7 +8,7 @@
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "build": "node build/build.js",
-    "dev_server_win": "set NODE_ENV=dev && node dist/server.js",
+    "dev_server_win": "set NODE_ENV=dev && node server/server.js",
     "server_win": "set NODE_ENV=production && set LEANCLOUD_APP_PORT=8011 && node dist/server.js",
     "server_linux": "export NODE_ENV=production && export LEANCLOUD_APP_PORT=8011 && node dist/server.js",
     "server_mac": "export NODE_ENV=production && export LEANCLOUD_APP_PORT=8011 && node dist/server.js"
@@ -59,6 +59,7 @@
     "node-notifier": "^5.1.2",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "ora": "^1.2.0",
+    "oracledb": "^2.2.0",
     "portfinder": "^1.0.13",
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.8",

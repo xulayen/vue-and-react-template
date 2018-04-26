@@ -8,13 +8,59 @@ var soap = require('soap');
 var fs=require('fs');
 const path=require('path');
 const token = "Bearer "+auth.signToken(config.session.secret);
+var oracledb = require('oracledb');
 // routes/index.js
 module.exports = function (app) {
 
 
     app.get('/c',function(req, res,next){
-        return res.send("index apicccc"); 
+        oracledb.getConnection({
+            user          : Config.oracle.user,
+            password      : Config.oracle.password,
+            connectString : Config.oracle.connectString
+        },function(err, connection){
+            if (err) {
+                console.error(err.message);
+                return;
+              }
+              connection.execute(
+                  
+                `SELECT mobile
+                FROM t_sgm_user_1003
+                WHERE FACID = :id`,
+              
+              [1003]
+                  
+                ,function(err, result){
+                    if (err) {
+                        console.error(err.message);
+                        doRelease(connection);
+                        return;
+                      }
+                      console.log(result.metaData); // [ { name: 'DEPARTMENT_ID' }, { name: 'DEPARTMENT_NAME' } ]
+                      console.log(result.rows);     // [ [ 180, 'Construction' ] ]
+                      doRelease(connection);
+                      return res.send(result.rows); 
+   
+              })
+
+
+              // Note: connections should always be released when not needed
+                function doRelease(connection) {
+                    connection.close(
+                    function(err) {
+                        if (err) {
+                        console.error(err.message);
+                        }
+                    });
+                }
+        })
+
+
+ 
     });
+
+    
 
     app.post('/gettoken',function(req, res,next){
         res.writeHead(200,{

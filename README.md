@@ -13,8 +13,12 @@ $ npm i
 
 ## 开发
 
+- 开发过程中使用代理访问服务器
+
 ``` bash
 $ npm run start
+
+$ npm run dev_server_win
 ```
 
 ## 打包

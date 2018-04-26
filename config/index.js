@@ -20,6 +20,11 @@ module.exports = {
         target:'http://127.0.0.1:8011/',
         changeOrigin:true,
         secure:false
+      },
+      "/c":{
+        target:'http://127.0.0.1:8011/',
+        changeOrigin:true,
+        secure:false
       }
     },
     // Various Dev Server settings
